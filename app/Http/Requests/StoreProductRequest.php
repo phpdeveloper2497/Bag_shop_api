@@ -30,11 +30,15 @@ class StoreProductRequest extends FormRequest
                 'required',
                 'exists:catalogs,id'
             ],
+            "category_id" =>[
+                'required',
+                'exists:categories,id'
+            ],
             "name" => ['required', 'string'],
             "size" => ['required','numeric'],
-            "guarantee" => ['required', 'string'],
-            "price" => ['required','numeric'],
+            "guarantee" => ['required', 'numeric'],
             "weight" => ['required','numeric'],
+            "description" => ['required', 'string'],
         ];
     }
 }

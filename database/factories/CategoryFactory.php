@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Attribute>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class AttributeFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,7 @@ class AttributeFactory extends Factory
     public function definition(): array
     {
         return [
-//            "color" => fake()->name(),
-//           "makeup" => fake()->name()
+            "name" => fake()->name
         ];
     }
 }

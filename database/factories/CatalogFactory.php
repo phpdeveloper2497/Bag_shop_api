@@ -18,9 +18,8 @@ class CatalogFactory extends Factory
     {
         return [
            "name" => fake()->name,
-            "code" => rand(1000,9999),
-            "quantity" =>rand(5,50),
-            "description" => fake()->sentence
+//            "code" => rand(1000,9999)
+//            "quantity" =>rand(5,50),
         ];
     }
 }

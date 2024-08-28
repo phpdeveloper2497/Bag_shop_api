@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attribute;
-use App\Http\Requests\StoreAttributesRequest;
-use App\Http\Requests\UpdateAttributesRequest;
+use App\Http\Resources\CategoryResource;
+use App\Http\Resources\ShowCategoryResource;
+use App\Models\Category;
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 
-class AttributeController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $category = Category::all();
+        return CategoryResource::collection($category);
     }
 
     /**
@@ -27,7 +30,7 @@ class AttributeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAttributesRequest $request)
+    public function store(StoreCategoryRequest $request)
     {
         //
     }
@@ -35,15 +38,15 @@ class AttributeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Attribute $attributes)
+    public function show(Category $category)
     {
-        //
+        return new ShowCategoryResource($category);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Attribute $attributes)
+    public function edit(Category $category)
     {
         //
     }
@@ -51,7 +54,7 @@ class AttributeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAttributesRequest $request, Attribute $attributes)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
         //
     }
@@ -59,7 +62,7 @@ class AttributeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Attribute $attributes)
+    public function destroy(Category $category)
     {
         //
     }

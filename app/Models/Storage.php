@@ -12,8 +12,21 @@ class Storage extends Model
 
     protected $guarded = [];
 
-    public function product() : BelongsTo
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($storage) {
+            do {
+                $code = mt_rand(1000, 99999);
+            } while (self::where('code', $code)->exists());
+            $storage->code = $code;
+        });
+    }
 }
+

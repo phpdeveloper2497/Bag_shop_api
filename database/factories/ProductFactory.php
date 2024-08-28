@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Brand;
 use App\Models\Catalog;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,13 +20,14 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            "brand_id" =>Brand::inRandomOrder()->first()->id,
-            "catalog_id" =>Catalog::inRandomOrder()->first()->id,
-            "name" =>fake()->name,
+            "category_id" => Category::inRandomOrder()->first()->id,
+            "brand_id" => Brand::inRandomOrder()->first()->id,
+            "catalog_id" => Catalog::inRandomOrder()->first()->id,
+            "name" => fake()->name,
             "size" => fake()->randomFloat(),
-            "guarantee" => fake()->sentence,
-            "price" => fake()->randomFloat(2),
-            "weight" => fake()->randomFloat()
+            "guarantee" => fake()->randomNumber(),
+            "weight" => fake()->randomFloat(),
+            "description" => fake()->sentence
         ];
     }
 }

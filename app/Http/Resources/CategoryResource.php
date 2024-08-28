@@ -2,12 +2,10 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Attribute;
-use App\Models\Value;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class StorageResource extends JsonResource
+class CategoryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,15 +16,7 @@ class StorageResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "product_id" => $this->product_id,
-            "color" => $this->color,
-            "material" => $this->material,
-            "quantity" => $this->quantity,
-            "code" =>$this->code,
-            "price" => $this->price
+            "name" => $this->name
         ];
-
     }
-
-
 }

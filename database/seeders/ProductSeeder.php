@@ -16,35 +16,5 @@ class ProductSeeder extends Seeder
         $products = Product::factory()
             ->count(20)
             ->create();
-
-        foreach ($products as $product) {
-            $product->storages()->create([
-                "quantity" => rand(1, 25),
-                "attributes" => json_encode([
-                    [
-                        "attribute_id" => 1,
-                        "value_id" => rand(1, 4)
-                    ],
-                    [
-                        "attribute_id" => 2,
-                        "value_id" => rand(5, 7)
-                    ]
-                ]),
-            ]);
-            $product->storages()->create([
-                "quantity" => rand(1, 25),
-                "attributes" => json_encode([
-                    [
-                        "attribute_id" => 1,
-                        "value_id" => rand(1, 4)
-                    ],
-                    [
-                        "attribute_id" => 2,
-                        "value_id" => rand(5, 7)
-                    ]
-                ]),
-            ]);
-
-        }
     }
 }

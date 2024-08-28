@@ -11,7 +11,7 @@ class StoreStorageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,18 @@ class StoreStorageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "product_id" => ['required', 'exists:products,id'],
+            'color' => ['required','string','max:255'],
+            'material' => ['required','string','max:255'],
+            'quantity' => ['required','integer'],
+            'price' => ['required','numeric']
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+//            'code.unique' => 'код продукта должен быть уникальным.',
         ];
     }
 }

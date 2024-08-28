@@ -15,6 +15,16 @@ class Product extends Model
     protected $guarded = [];
 
 
+    public function user() :BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function category() :BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function brand() : BelongsTo
     {
         return $this->belongsTo(Brand::class);

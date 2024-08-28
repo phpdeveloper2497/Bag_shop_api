@@ -17,9 +17,8 @@ class CatalogResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->name,
-            "code" => $this->code,
             "quantity" => $this->quantity,
-            "description" => $this->description,
+//            "description" => $this->description,
 //            "products" => ProductResource::collection($this->products)
         ];
     }

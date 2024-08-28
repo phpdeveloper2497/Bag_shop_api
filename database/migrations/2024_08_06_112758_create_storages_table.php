@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('storages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained();
-            $table->json('attributes');
+            $table->string('color');
+            $table->string('material');
+            $table->float('price');
             $table->integer('quantity')->default(1);
+            $table->integer('code')->unique();
             $table->timestamps();
         });
     }
